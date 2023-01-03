@@ -19,8 +19,14 @@ public class loginTest {
 	public void login() throws IOException  {
 		
 //		//Open chrome browser
-//		WebDriverManager.chromedriver().setup();
-//		WebDriver driver=new ChromeDriver();
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://stageapp.botprise.com/");
+		System.out.println("this is title"+driver.getTitle());
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("admin@botprise.com");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("BotpriseTeam2021$$");
+		driver.findElement(By.xpath("//strong[normalize-space()='Login']")).click();
 //		
 //		//Open URL of the Application
 //		driver.get("URL");
